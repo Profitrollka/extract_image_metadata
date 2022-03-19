@@ -9,7 +9,7 @@ tags = ['make','model','datetime','datetime_digitized','datetime_original','lens
 
 def check_exif_tags(img_path):
         """
-        Function returns list of tags that for wich it possible to receive meta data  
+        Function returns list of tags for wich it possible to receive meta data  
         :param img_path: image file path
         :return tags_list: list of tags for image
         """
@@ -27,7 +27,7 @@ def check_exif_tags(img_path):
 def get_meta_data(img_path, output_file=None, f_mode='w'):
         """
         Function extract meta data from image
-        :param img_path: mage file path
+        :param img_path: image file path
         :param output_file: csv file name for saving data, defaul value None
         :param mode: 'a' - append data to the end of exciting file, 'w' for create or owerwrite data in file   
         :return saving meta data to file or printing it
@@ -61,9 +61,9 @@ def get_meta_data(img_path, output_file=None, f_mode='w'):
 
 def main():
         parser = argparse.ArgumentParser()
-        parser.add_argument('img', help='name of image file')
-        parser.add_argument('-o', '--output_file', help='file for savimng meta data')
-        parser.add_argument('-m', '--mode', help='"a" for append data to the end of the file, "w" for owerwrite all data in file')
+        parser.add_argument('img', help='path to image file')
+        parser.add_argument('-o', '--output_file', help='path to file for saving meta data')
+        parser.add_argument('-m', '--mode', help='mode for saving data to file, "a" for append data to the end of the file, "w" for owerwrite all data in the file')
         args = parser.parse_args()
         if args.img:
                 get_meta_data(args.img, args.output_file, args.mode)
